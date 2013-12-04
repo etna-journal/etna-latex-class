@@ -42,6 +42,6 @@
 colorlinks=true,
 linkcolor=red,
 filecolor=green,
-citecolor=red,
-pdfpagemode=None]
+citecolor=red
+]
 {hyperref}
