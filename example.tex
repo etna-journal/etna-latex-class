@@ -1,0 +1,122 @@
+%
+% Copyright (C) 2013 by Nico Schlömer
+%
+% This file may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either
+% version 1.2 of this license or (at your option) any later
+% version. The latest version of this license is in:
+%
+%    http://www.latex-project.org/lppl.txt
+%
+% and version 1.2 or later is part of all distributions of
+% LaTeX version 1999/12/01 or later.
+%
+\documentclass[draft]{etna}
+
+\title{Dummy title}
+\author{John Doe\thanks{Department of Mathematics, University of Foobar, Foo
+Road 14, Germany (\url{doe@foobar.de}).}
+\and
+Max Mustermann\thanks{Institut f\"ur Mathematik, Universit\"at Berlin,
+Hauptstr. 1, Germany
+(\href{mailto:mustermann@berlin.de}{\nolinkurl{mustermann@berlin.be}}).}}
+
+\usepackage{booktabs}
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  \lipsum[1]
+\end{abstract}
+
+\begin{keywords}
+   dummy keyword, foo bar, foo, bar
+\end{keywords}
+
+\begin{AMS}
+  00A01, 02B03, 04C05
+\end{AMS}
+
+\section{Introduction}
+\lipsum[2]
+
+\begin{theorem}[Pythagoras]
+Toc toc toc,
+\begin{equation}
+a^2 + b^2 = c^2.
+\end{equation}
+\end{theorem}
+\begin{proof}
+  \lipsum[1]
+\end{proof}
+
+\lipsum[3]
+
+\begin{theorem}[Cauchy]\label{th:1}
+  Tic tic tic,
+  \begin{equation}\label{eq:1}
+    f^{(n)}(a) = \frac{n!}{2\pi i} \oint_\gamma \frac{f(z)}{(z-a)^{n+1}}\, dz.
+  \end{equation}
+\end{theorem}
+\begin{proof}
+Without proof.
+\end{proof}
+
+Reference to equation~(\ref{eq:1}), theorem~\ref{th:1}.
+
+Another equation:
+\begin{equation}
+  R = \frac{\displaystyle{\sum_{i=1}^n (x_i-\bar{x})(y_i-
+\bar{y})}}{\displaystyle{\left[
+\sum_{i=1}^n(x_i-\bar{x})^2
+\sum_{i=1}^n(y_i-\bar{y})^2\right]^{1/2}}}
+\end{equation}
+
+\begin{table}
+\centering
+\caption{A dummy table.}
+\begin{tabular}{llr}
+\toprule
+\multicolumn{2}{c}{Item} \\
+\cmidrule(r){1-2}
+Animal    & Description & Price (\$) \\
+\midrule
+Gnat      & per gram    & 13.65      \\
+          & each        & 0.01       \\
+Gnu       & stuffed     & 92.50      \\
+Emu       & stuffed     & 33.33      \\
+Armadillo & frozen      & 8.99       \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{remark}
+  \lipsum[4]
+\end{remark}
+%\begin{example}
+%  \lipsum[5]
+%\end{example}
+%\begin{algorithm}
+%  \lipsum[6]
+%\end{algorithm}
+
+\section{Conclusions}
+\lipsum[10-12]
+
+\begin{figure}
+  \caption{A dummy figure.}
+\end{figure}
+
+\appendix
+
+\section{Miscellaneous lemmas}
+\lipsum[13-15]
+
+\bibliographystyle{siam}
+%\bibliography{mybibfile}
+
+\end{document}
