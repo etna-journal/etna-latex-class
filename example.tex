@@ -11,7 +11,7 @@
 % and version 1.2 or later is part of all distributions of
 % LaTeX version 1999/12/01 or later.
 %
-\documentclass[draft]{etna}
+\documentclass[draft,reqno]{etna}
 
 \title{Dummy title}
 \author{John Doe\thanks{Department of Mathematics, University of Foobar, Foo
@@ -97,12 +97,16 @@ Armadillo & frozen      & 8.99       \\
 \begin{remark}
   \lipsum[4]
 \end{remark}
-%\begin{example}
-%  \lipsum[5]
-%\end{example}
-%\begin{algorithm}
-%  \lipsum[6]
-%\end{algorithm}
+\begin{example}
+  \lipsum[5]
+\end{example}
+\subsection{Corollaries}
+\begin{corollary}
+  \lipsum[6]
+\end{corollary}
+\begin{lemma}
+  \lipsum[27]
+\end{lemma}
 
 \section{Conclusions}
 \lipsum[10-12]

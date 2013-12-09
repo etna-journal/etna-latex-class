@@ -14,7 +14,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{etna}[2013/12/03 v0.1 ETNA LaTeX class]
 
-% TODO leqno necessary?
+% TODO: remove leqno in guidelines; seems to be enabled by default.
+
+% TODO: use current siamltex
+% Guidelines advice an old version of siamltex. This may lead to conflicts
+% if an up-to-date version is also installed.
 \LoadClassWithOptions{siamltex}
 
 % We would like to use \theoremstyle{remark} from amsthm, but unfortunately,
@@ -23,6 +27,9 @@
 % TODO come up with another way for defining setting the styles for remarks.
 
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{corollary}[theorem]{Corollary}
 
 
 % [1] An essential guide to LaTeX2e usage;
