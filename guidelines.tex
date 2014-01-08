@@ -2,13 +2,15 @@
 
 \def\qed{~\vbox{\hrule\hbox{\vrule height1.3ex\hskip0.8ex\vrule}\hrule}}
 
-\title{Guidelines for ETNA manuscripts\footnote{Version of \today.}}
-%J\"org Liesen, draft of \today
-\date{}
+\title{Guidelines for ETNA manuscripts}
 
-%\usepackage[T1]{fontenc}
-%\usepackage{lmodern}
-%\usepackage{microtype}
+\date{\today}
+%J\"org Liesen, draft of \today
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
 \usepackage{booktabs}
 \usepackage
 [
@@ -19,54 +21,49 @@ citecolor=red
 ]
 {hyperref}
 
+\usepackage{minted}
+
 \begin{document}
 
 \maketitle
 
-\section{General formatting guidelines}
-
 A manuscript for ETNA must be written in English. It may be in color provided
 it is equally readable when displayed in black and white.
 
-Any manuscript submitted to ETNA must be developed in {\LaTeX} using the style
-files in the SIAM {\LaTeX} package \texttt{siamltex}.  This means that the
-manuscript must follow the general layout defined by the SIAM {\LaTeX} style.
+Any manuscript submitted to ETNA must be developed in \LaTeX{} using the ETNA
+style files. The manuscript must follow the general guidelines described in
+this document.
 
-There are several versions of the SIAM {\LaTeX} package. For ETNA manuscripts
-the version available from the ETNA web site should be
-used\footnote{\url{http://etna.math.kent.edu/LaTeX}}. This package contains the
-following 5 files:
+ETNA papers are compiled using \texttt{lualatex}, so before submitting, make
+sure that your document compiles cleanly.
 
-\texttt{siam.bst} (version of January 24, 1988)\\
-\texttt{siam10.clo} (Version 1.0; October 1, 1995)\\
-\texttt{siamltex.cls} (Version 1.1; August 1, 1995)\\
-\texttt{siamltex.sty} (Version 1.0; December 1, 1995)\\
-\texttt{subeqn.clo} (last modified June 8, 1989)
+\section{Installation}
 
-Two further files are available from the {\LaTeX} directory at the ETNA web
-site: The file \texttt{docultex.tex} contains a documentation for SIAM macros
-for use with {\LaTeX}2e. The file \texttt{lexample.tex} contains examples.
+The ETNA style files are provided at
+\begin{quote}
+\url{http://etna.math.kent.edu/LaTeX}.
+\end{quote}
+For installation, the package needs to be downloaded an unpacked in a directory
+where \LaTeX{} can find it.
 
-Compiling the two files \texttt{docultex.tex} and \texttt{lexample.tex} results
-in two 8-page manuscripts that explain all major issues in the context of the
-SIAM {\LaTeX} style and give numerous examples.
-%In the following section ETNA specific rules will be explained.
+\subsection*{Quick start}
+The ETNA package contains an example document, \texttt{example.tex} which can
+be used as a template for preparing a manuscript.
 
-\section{ETNA specifics}
-All manuscripts must follow the following ETNA specific rules (see
-Figure~\ref{fig:preamble} at the end of this document for an example of the
-initial part of a paper according to the SIAM {\LaTeX} style and with ETNA
-specific commands):
+\section{Usage}
+All manuscripts submitted to ETNA must use the ETNA style, i.e.,
+\verb|\documentclass{etna}|, and adhere to the following ETNA specific rules.
 
 \begin{itemize}
-\item ETNA papers are compiled using \texttt{lualatex}.
-\item Figures should be submitted as vector graphics and not as bitmaps whenever
-possible, e.g., with the native \LaTeX{} packages Ti\textit{k}Z or Pgfplots, or
-  as PDF or SVG files.
+\item Figures should be submitted as vector graphics and not as bitmaps
+  whenever possible. Popular choices include the native \LaTeX{} packages
+  Ti\textit{k}Z/PGF\footnote{\url{http://www.ctan.org/pkg/pgf}} or
+  Pgfplots\footnote{\url{http://www.ctan.org/pkg/pgfplots}} as well as PDF and
+  SVG files.
 
-\item For authors from the same institution there should be one
-common footnote and the email addresses in the footnote text
-should be written as (\texttt{{authorA,authorB}@uofi.edu}).
+\item For authors from the same institution there should be one common footnote
+  and the email addresses in the footnote text should be written as
+  (\texttt{\{authorA,authorB\}@uofi.edu}).
 
 %
 % TODO: adapt numbering description, e.g. 'consecutive numbering'.
@@ -76,41 +73,41 @@ should be written as (\texttt{{authorA,authorB}@uofi.edu}).
   number and Y is the subsection number (if applicable). To generate the
   theorem-like environments ``Example'', ``Remark'', and ``Algorithm'' you
   should add the commands
-\begin{verbatim}
-     \newtheorem{remark}[theorem]{Remark}
-     \newtheorem{example}[theorem]{Example}
-     \newtheorem{algorithm}[theorem]{Algorithm}
-\end{verbatim}
-to the preamble of your \TeX-file.
+\begin{minted}{latex}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\end{minted}
+to the preamble of your \LaTeX-file.
 %
 \item The text of examples and remarks should be typeset in roman (not in
   italics as in definitions, theorems, lemmas, and corollaries).  This can be
-  achieved as follows:
-\begin{verbatim}
-     \begin{remark}\upshape
-       Text of remark.
-     \end{remark}
-\end{verbatim}
+  achieved by
+\begin{minted}{latex}
+\begin{remark}\upshape
+ Text of remark.
+\end{remark}
+\end{minted}
 %
 \item  At the end of a proof, there should be a gap between the last word and
   the ``endproof'' symbol (Halmos box). This is achieved as follows:
-%
-\begin{verbatim}
-    \begin{proof} Text of the proof.  $\qquad$ \end{proof}
-\end{verbatim}
-%
+\begin{minted}{latex}
+\begin{proof}Text of the proof. $\qquad$ \end{proof}
+\end{minted}
 If the proof ends with a displayed equation you should use the following:
-\begin{verbatim}
-     \emph{Proof.} Text of the proof.
-     \[
-       a^2+b^2=c^2. \qquad\endproof
-     \]
-\end{verbatim}
+\begin{minted}{latex}
+\emph{Proof.} Text of the proof.
+\[
+ a^2+b^2=c^2. \qquad\endproof
+\]
+\end{minted}
 
 \item Equations that are not referenced should not be numbered.
-%
-\item Tables should be typeset with the booktabs packages and should have as few lines as possible and no vertical lines.
-For example, instead of
+
+\item Tables should be typeset with the booktabs
+  package\footnote{\url{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/}}
+  and should have as few lines as possible and no vertical lines.  For example,
+  instead of
 \begin{center}
   \begin{tabular}{|c|c|c|}\hline
   $C1$ & $C2$ & $C3$ \\ \hline
@@ -130,100 +127,79 @@ the form
 should be used.
 \item Table captions should be \emph{above} the table (unlike figure captions
   which should be below the figure). The text of all captions (table or figure)
-  should end with a period~``.''.
+  should end with a period~`.'.
 
 \item Appendices should be at the end of the paper, immediately before the
-bibliography.
+  bibliography.
 
-\item Further style-related comments:
-\begin{itemize}
-\item The symbols used for real, complex numbers, etc.,
-are \texttt{{\char`\\mathbb\{R\}}}, \texttt{{\char`\\mathbb\{C\}}}, etc.
-%
-\item For matrices, square brackets should be used \\
-(either use
-\texttt{\char`\\left[ \dots \char`\\right]} or \texttt{\char`\\bmatrix}).
-%
+\item The symbols used for real and complex numbers are \verb|\mathbb{R}|,
+  \verb|\mathbb{C}|, respectively.
+
+\item For matrices, square brackets should be used.
+(either through \verb|\left[...\right]| or \verb|\bmatrix|).
+
 \item Sections should be referred to by ``Section~X.Y'' and not ``\S~X.Y''.
-%
-\item The abbreviations ``et al.'', ``i.e.'', and ``e.g.'', in the text
-should always be in roman font.
-In English, there is always a comma after ``i.e.'' and ``e.g.''.
-%
-A parenthetical remark in the middle of the sentence (e.g., this one) is in
-parenthesis, while at the end of the sentence follows a semicolon; e.g., this
-one.
-%Insertions in the middle of the sentence should be in parenthesis, but at
-%the end of the sentence they should be separated by a semicolon. Example:
-%``The middle of the sentence (i.e., here), and the end of the sentence;
-%i.e., here.''
-%
-\end{itemize}
+
+\item The abbreviations ``et al.'', ``i.e.'', and ``e.g.'', in the text should
+  always be in roman font.  In English, there is always a comma after ``i.e.''
+  and ``e.g.''. A parenthetical remark in the middle of the sentence (e.g.,
+  this one) is in parenthesis, while at the end of the sentence follows a
+  semicolon; e.g., this one.
 \end{itemize}
 
 
-\section{References}
+\subsection{References}
 To facilitate the editing process, authors are especially urged to carefully
-prepare the references of their manuscripts.
-It is the author's responsibility to provide complete details such as editors,
-publisher, city of publication, page numbers, department and institution, and
-correct abbreviations of
-names of serials. All of this information can be found, for example, using
-\emph{MathSciNet}\footnote{\url{http://www.ams.org/mathscinet/}}.
+prepare the references of their manuscripts. It is the authors' responsibility
+to provide complete details such as editors, publisher, city of publication,
+page numbers, department and institution, as well as correct abbreviations of
+names of serials. All of this information can be found, for example, on
+MathSciNet\footnote{\url{http://www.ams.org/mathscinet/}}; the tool
+bibtex-mathscinet\footnote{\url{https://github.com/nschloe/bibtex-mathscinet}}
+can be used to automatically improve existing BibTeX files.
 
-%A PDF file of the
-%correct abbreviations can also be found at
-%\texttt{http://www.ams.org/msnhtml/serials.pdf}.
-%
 \emph{Manuscripts may be returned to authors if the manuscripts and the
-references are not properly prepared.} The preferred way for formatting the
-references is to use BibTeX with the SIAM bibliography style:
-\begin{verbatim}
-         \bibliographystyle{siam}
-         \bibliography{YourBibFile}
-\end{verbatim}
+references are not properly prepared.}
+
+The preferred way for formatting the references is to use BibTeX with the SIAM
+bibliography style:
+\begin{minted}{latex}
+\bibliographystyle{siam}
+\bibliography{YourBibFile}
+\end{minted}
 
 Further instructions concerning the references:
 
 \begin{itemize}
 \item In the text references should be cited using the command
-  \texttt{\char`\\cite$\{\mbox{\texttt{keylist}}\}$},
-where \texttt{keylist} contains a list of keys (i.e., the names of your bibitems),
-separated by commas. Example:
-\texttt{\char`\\cite$\{\mbox{\texttt{ArbGol88,ArbGol95}}\}$}.
-%
-\item Citations should be either sorted according to numbers, that is [3,5,12]
-instead of [12,3,5], or by publication dates. The order should be consistent
-throughout the paper.
-%
-\item Only references cited in the text should be included in the bibliography.
-%
-\item Citations in the abstract should be avoided. If this is not possible,
-then the authors' names and the publication details should be given. For example,
+  \verb|\cite{keylist}|, where \verb|keylist| contains a list of keys (i.e.,
+  the names of your bibitems), separated by commas. Example:
+  \verb|\cite{ArbGol88,ArbGol95}|.
 
+\item Citations should be either sorted according to numbers, that is [3,5,12]
+  instead of [12,3,5], or by publication dates. The order should be consistent
+  throughout the paper.
+
+\item Only references cited in the text should be included in the bibliography.
+
+\item Citations in the abstract should be avoided. If this is not possible,
+  then the authors' names and the publication details should be given. For
+  example,
 \begin{quote}
   Golub and Kahan [SIAM J. Numer. Anal., 2 (1965), pp.~205--224] show that
   [\dots].
 \end{quote}
 
-%\item If a reference is available online, the URL should be added to the
-%  citation, e.g.,
-%%
-%\begin{verbatim}
-%\url{http://etna.math.kent.edu/vol.26.2007/pp453-473.dir}
-%\end{verbatim}
-
 \item Some journals have ``paper numbers'' instead of conventional page
   numbers.  An example is the Journal of Fluids Engineering. Papers in such
   journals should be cited using the paper number and the number of pages,
-  e.g., the bibtex \texttt{pages} field should be of the form \texttt{051202 (10 pages)}.
-
+  e.g., the BibTeX \texttt{PAGES} field should be of the form \texttt{051202
+  (10 pages)}.
 
 \end{itemize}
 
 \section{Submission}
-To submit a manuscript, send a PDF file containing
-the whole manuscript by email to
-\href{mailto:etna@math.kent.edu}{\nolinkurl{etna@math.kent.edu}}.
+To submit a manuscript, send a PDF file containing the whole manuscript by
+email to \href{mailto:etna@math.kent.edu}{\nolinkurl{etna@math.kent.edu}}.
 
 \end{document}
