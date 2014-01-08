@@ -1,19 +1,17 @@
-\documentclass[parskip]{scrartcl}
-
-\def\qed{~\vbox{\hrule\hbox{\vrule height1.3ex\hskip0.8ex\vrule}\hrule}}
+\documentclass[parskip=half]{scrartcl}
 
 \title{Guidelines for ETNA manuscripts}
+% Original document by J\"rg Liesen,
+% adapted by Andr\'e Gaul and Nico Schl\"omer
 
 \date{\today}
-%J\"org Liesen, draft of \today
 
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{microtype}
 
 \usepackage{booktabs}
-\usepackage
-[
+\usepackage[
 colorlinks=true,
 linkcolor=red,
 filecolor=green,
@@ -27,13 +25,17 @@ citecolor=red
 
 \maketitle
 
+%\begin{abstract}
+%This document describes the preparation of a manuscript for submission to
+%Electronic Transactions on Numerical Analysis (ETNA).
+%\end{abstract}
+
 A manuscript for ETNA must be written in English. It may be in color provided
 it is equally readable when displayed in black and white.
 
 Any manuscript submitted to ETNA must be developed in \LaTeX{} using the ETNA
 style files. The manuscript must follow the general guidelines described in
 this document.
-
 ETNA papers are compiled using \texttt{lualatex}, so before submitting, make
 sure that your document compiles cleanly.
 
@@ -63,7 +65,7 @@ All manuscripts submitted to ETNA must use the ETNA style, i.e.,
 
 \item For authors from the same institution there should be one common footnote
   and the email addresses in the footnote text should be written as
-  (\texttt{\{authorA,authorB\}@uofi.edu}).
+  \texttt{\{authorA,authorB\}@uofi.edu}.
 
 %
 % TODO: adapt numbering description, e.g. 'consecutive numbering'.
@@ -80,7 +82,7 @@ All manuscripts submitted to ETNA must use the ETNA style, i.e.,
 \end{minted}
 to the preamble of your \LaTeX-file.
 %
-\item The text of examples and remarks should be typeset in roman (not in
+\item The text of examples and remarks should be typeset upright (not in
   italics as in definitions, theorems, lemmas, and corollaries).  This can be
   achieved by
 \begin{minted}{latex}
@@ -135,16 +137,16 @@ should be used.
 \item The symbols used for real and complex numbers are \verb|\mathbb{R}|,
   \verb|\mathbb{C}|, respectively.
 
-\item For matrices, square brackets should be used.
+\item For matrices, square brackets should be used
 (either through \verb|\left[...\right]| or \verb|\bmatrix|).
 
 \item Sections should be referred to by ``Section~X.Y'' and not ``\S~X.Y''.
 
 \item The abbreviations ``et al.'', ``i.e.'', and ``e.g.'', in the text should
-  always be in roman font.  In English, there is always a comma after ``i.e.''
-  and ``e.g.''. A parenthetical remark in the middle of the sentence (e.g.,
-  this one) is in parenthesis, while at the end of the sentence follows a
-  semicolon; e.g., this one.
+  always be upright. In English, there is always a comma after ``i.e.'' and
+  ``e.g.''. A parenthetical remark in the middle of the sentence (e.g., this
+  one) is in parenthesis, while at the end of the sentence follows a semicolon;
+  e.g., this one.
 \end{itemize}
 
 
@@ -156,7 +158,7 @@ page numbers, department and institution, as well as correct abbreviations of
 names of serials. All of this information can be found, for example, on
 MathSciNet\footnote{\url{http://www.ams.org/mathscinet/}}; the tool
 bibtex-mathscinet\footnote{\url{https://github.com/nschloe/bibtex-mathscinet}}
-can be used to automatically improve existing BibTeX files.
+can be used to automatically adapt existing BibTeX files.
 
 \emph{Manuscripts may be returned to authors if the manuscripts and the
 references are not properly prepared.}

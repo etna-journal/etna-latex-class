@@ -21,9 +21,6 @@ example:
 bib:
 	@$(BIBTEX) $(TARGET)
 
-doc:
-	@$(LATEX) $(LATEX_OPTIONS) guidelines.tex
-
 .PHONY: clean
 
 clean:
