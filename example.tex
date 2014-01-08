@@ -14,12 +14,12 @@
 \documentclass[draft,reqno]{etna}
 
 \title{Dummy title}
-\author{John Doe\thanks{Department of Mathematics, University of Foobar, Foo
-Road 14, Germany (\url{doe@foobar.de}).}
+\author{John Doe\footnotemark[1]
 \and
-Max Mustermann\thanks{Institut f\"ur Mathematik, Universit\"at Berlin,
-Hauptstr. 1, Germany
-(\href{mailto:mustermann@berlin.de}{\nolinkurl{mustermann@berlin.be}}).}}
+Jean Dupont\footnotemark[1]
+\and
+Max Mustermann\footnotemark[2]
+}
 
 \usepackage{booktabs}
 
@@ -28,6 +28,12 @@ Hauptstr. 1, Germany
 \begin{document}
 
 \maketitle
+
+\footnotetext[1]{Department of Mathematics, University of Foobar, Foo
+  Road 14, Germany (\texttt{\{doe,dupont\}@foobar.de}).}
+\footnotetext[2]{Institut f\"ur Mathematik, Universit\"at Berlin,
+  Hauptstr. 1, Germany (\texttt{mustermann@berlin.de}).}
+
 
 \begin{abstract}
   \lipsum[1]
@@ -51,7 +57,7 @@ a^2 + b^2 = c^2.
 \end{equation}
 \end{theorem}
 \begin{proof}
-  \lipsum[1]
+  Abc. $\qquad$
 \end{proof}
 
 \lipsum[3]
@@ -63,7 +69,7 @@ a^2 + b^2 = c^2.
   \end{equation}
 \end{theorem}
 \begin{proof}
-Without proof.
+Without proof. $\qquad$
 \end{proof}
 
 Reference to equation~(\ref{eq:1}), theorem~\ref{th:1}.
