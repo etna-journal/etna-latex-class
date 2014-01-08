@@ -86,15 +86,18 @@ achieved by adding \texttt{leqno} to the ``documentclass'' options.
 %
 \item Typesetting of ETNA papers is based on the \texttt{times} package.
 The command
-\begin{verbatim}     \usepackage{times}\end{verbatim}
+\begin{verbatim}
+    \usepackage{times}
+\end{verbatim}
 has to be loaded in the document's preamble.
 %
 % TODO: adapt numbering description, e.g. 'consecutive numbering'.
 %
-\item Examples, remarks, algorithms, etc., should be numbered in the
-same way and format as theorems, namely as ``Example X.Y'', where X is the section
-number and Y is the subsection number (if applicable). To generate the theorem-like
-environments ``Example'', ``Remark'', and ``Algorithm'' you should add the commands
+\item Examples, remarks, algorithms, etc., should be numbered in the same way
+  and format as theorems, namely as ``Example X.Y'', where X is the section
+  number and Y is the subsection number (if applicable). To generate the
+  theorem-like environments ``Example'', ``Remark'', and ``Algorithm'' you
+  should add the commands
 \begin{verbatim}
      \newtheorem{remark}[theorem]{Remark}
      \newtheorem{example}[theorem]{Example}
@@ -114,7 +117,9 @@ to the preamble of your \TeX-file.
 \item  At the end of a proof, there should be a gap between the last word and
   the ``endproof'' symbol (Halmos box). This is achieved as follows:
 %
-\begin{verbatim}     \begin{proof} Text of the proof.  $\qquad$ \end{proof}\end{verbatim}
+\begin{verbatim}
+    \begin{proof} Text of the proof.  $\qquad$ \end{proof}
+\end{verbatim}
 %
 If the proof ends with a displayed equation you should use the following:
 %
@@ -149,26 +154,28 @@ the symbol $\qed\,$.
         {hyperref}
 \end{verbatim}
 
-\item All references in the manuscript should be ``clickable'', which
-means that all numbers of sections, definitions, theorems, equations, etc.,
-should be labeled. \emph{Equations that are not referenced should not be numbered.}
+\item All references in the manuscript should be ``clickable'', meaning that
+  all numbers of sections, definitions, theorems, equations, etc., should be
+  labeled. \emph{Equations that are not referenced should not be numbered.}
 %
-\item Tables should have as few lines as possible. For example,
-instead of\\
-
-\hspace{2cm}\begin{tabular}{|c|c|c|}\hline
-$C1$ & $C2$ & $C3$ \\ \hline
-$a_1$ & $a_2$ & $a_3$ \\ \hline
-$b_1$ & $b_2$ & $b_3$ \\ \hline
-\end{tabular}\\
-
-you should use\\
-
-\hspace{2cm}\begin{tabular}{c|c|c}
-$C1$ & $C2$ & $C3$ \\ \hline
-$a_1$ & $a_2$ & $a_3$ \\
-$b_1$ & $b_2$ & $b_3$
-\end{tabular}.\\
+\item Tables should have as few lines as possible. For example, instead of
+\begin{table}[h]
+  \centering
+  \begin{tabular}{|c|c|c|}\hline
+  $C1$ & $C2$ & $C3$ \\ \hline
+  $a_1$ & $a_2$ & $a_3$ \\ \hline
+  $b_1$ & $b_2$ & $b_3$ \\ \hline
+  \end{tabular}
+\end{table}
+you should use
+\begin{table}[h]
+  \centering
+  \begin{tabular}{c|c|c}
+  $C1$ & $C2$ & $C3$ \\ \hline
+  $a_1$ & $a_2$ & $a_3$ \\
+  $b_1$ & $b_2$ & $b_3$
+  \end{tabular}.
+\end{table}
 
 \item Table captions should be \emph{above} the table (unlike figure captions
   which should be below the figure). The text of all captions (table or figure)
