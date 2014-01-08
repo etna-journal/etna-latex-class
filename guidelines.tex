@@ -1,76 +1,90 @@
-\documentclass[10pt]{article}
+\documentclass{scrartcl}
 
 \def\qed{~\vbox{\hrule\hbox{\vrule height1.3ex\hskip0.8ex\vrule}\hrule}}
 
+\title{Guidelines for ETNA manuscripts\footnote{Version of May 13, 2009.}}
+%J\"org Liesen, draft of \today
+\date{}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+%\usepackage{url}
+
+\usepackage
+[
+colorlinks=true,
+linkcolor=red,
+filecolor=green,
+citecolor=red
+]
+{hyperref}
 
 \begin{document}
 
-\begin{center}{\bf\Large
-Guidelines for ETNA manuscripts\footnote{Version of May 13, 2009.}%\\[0.25ex]
-%J\"org Liesen, draft of \today
-}\end{center}
-
-\bigskip
+\maketitle
 
 \section{General formatting guidelines}
 
-A manuscript for ETNA must be written in English. It may be
-in color provided it is equally readable when displayed in
-black and white.\\[0.5ex]
+A manuscript for ETNA must be written in English. It may be in color provided
+it is equally readable when displayed in black and white.
+\bigskip
 %
-Any manuscript submitted to ETNA must be developed in {\LaTeX}
-using the style files in the SIAM {\LaTeX} package {\tt siamltex}.
-This means that the manuscript must follow
-the general layout defined by the SIAM {\LaTeX} style.\\[0.5ex]
+Any manuscript submitted to ETNA must be developed in {\LaTeX} using the style
+files in the SIAM {\LaTeX} package \texttt{siamltex}.  This means that the
+manuscript must follow the general layout defined by the SIAM {\LaTeX} style.
+\bigskip
 %
-There are several versions of the SIAM {\LaTeX} package. For ETNA
-manuscripts the version available from the ETNA web site should be
-used\footnote{{\tt http://etna.math.kent.edu/LaTeX}}. This package
-contains the following 5 files:\\[0.5ex]
+There are several versions of the SIAM {\LaTeX} package. For ETNA manuscripts
+the version available from the ETNA web site should be
+used\footnote{\url{http://etna.math.kent.edu/LaTeX}}. This package contains the
+following 5 files:
+\bigskip
 %
-\noindent {\tt siam.bst} (version of January 24, 1988)\\
-{\tt siam10.clo} (Version 1.0; October 1, 1995)\\
-{\tt siamltex.cls} (Version 1.1; August 1, 1995)\\
-{\tt siamltex.sty} (Version 1.0; December 1, 1995)\\
-{\tt subeqn.clo} (last modified June 8, 1989)\\[0.5ex]
+\noindent \texttt{siam.bst} (version of January 24, 1988)\\
+\texttt{siam10.clo} (Version 1.0; October 1, 1995)\\
+\texttt{siamltex.cls} (Version 1.1; August 1, 1995)\\
+\texttt{siamltex.sty} (Version 1.0; December 1, 1995)\\
+\texttt{subeqn.clo} (last modified June 8, 1989)
+\bigskip
 %
-\noindent Two further files are available from the {\LaTeX} directory
-at the ETNA web site: The file {\tt docultex.tex} contains a documentation
-for SIAM macros for use with {\LaTeX} 2e. The file {\tt lexample.tex}
-contains examples.\\[0.5ex]
+Two further files are available from the {\LaTeX} directory at the ETNA web
+site: The file \texttt{docultex.tex} contains a documentation for SIAM macros
+for use with {\LaTeX}2e. The file \texttt{lexample.tex} contains examples.
+\bigskip
 %
-Compiling the two files  {\tt docultex.tex} and {\tt lexample.tex}
-results in two 8-page manuscripts that explain all major issues in
-the context of the SIAM {\LaTeX} style and give numerous examples.
+Compiling the two files \texttt{docultex.tex} and \texttt{lexample.tex} results
+in two 8-page manuscripts that explain all major issues in the context of the
+SIAM {\LaTeX} style and give numerous examples.
 %In the following section ETNA specific rules will be explained.
 
 
 
 \section{ETNA specifics}
-All manuscripts must follow the following ETNA specific rules
-(see Figure~\ref{fig:preamble} at the end of this document for an
-example of the initial part of a paper according to the
-SIAM {\LaTeX} style and with ETNA specific commands):
+All manuscripts must follow the following ETNA specific rules (see
+Figure~\ref{fig:preamble} at the end of this document for an example of the
+initial part of a paper according to the SIAM {\LaTeX} style and with ETNA
+specific commands):
 
 \begin{itemize}
-\item ETNA papers are compiled using the sequence {\tt latex} $\rightarrow$
-{\tt dvips} $\rightarrow$ {\tt ps2pdf}, i.e., the dvi file is
-translated into PostScript, and the PostScript file is translated
-into PDF. To make this sequence work, it is generally recommended
-that {\em all figure files are in PostScript format (ps or eps).}
-Figure files in other formats, e.g. PDF, jpg, etc., are usually not
-acceptable. Before submitting a manuscript to ETNA, authors should
-make sure that the manuscript can be compiled in the above mentioned
-sequence.
+\item ETNA papers are compiled using the sequence \texttt{latex} $\rightarrow$
+  \texttt{dvips} $\rightarrow$ \texttt{ps2pdf}, i.e., the dvi file is
+  translated into PostScript, and the PostScript file is translated into \@PDF.
+  To make this sequence work, it is generally recommended that \emph{all figure
+    files are in PostScript format (ps or eps).} Figure files in other formats,
+    e.g.  PDF, jpg, etc., are usually not acceptable. Before submitting a
+    manuscript to ETNA, authors should make sure that the manuscript can be
+    compiled in the above mentioned sequence.
 %
 \item The SIAM {\LaTeX} style used by ETNA supports the
-use of the package {\tt epsfig} for including PostScript figures. See
-the {\tt epsfig} documentation for details on the use of this style option.
+use of the package \texttt{epsfig} for including PostScript figures. See
+the \texttt{epsfig} documentation for details on the use of this style option.
 %
 \item Equation numbers are placed on the left of the equation. This is
-achieved by adding {\tt leqno} to the ``documentclass'' options.
+achieved by adding \texttt{leqno} to the ``documentclass'' options.
 %
-\item Typesetting of ETNA papers is based on the {\tt times} package.
+\item Typesetting of ETNA papers is based on the \texttt{times} package.
 The command
 \begin{verbatim}     \usepackage{times}\end{verbatim}
 has to be loaded in the document's preamble.
@@ -86,19 +100,19 @@ environments ``Example'', ``Remark'', and ``Algorithm'' you should add the comma
      \newtheorem{example}[theorem]{Example}
      \newtheorem{algorithm}[theorem]{Algorithm}
 \end{verbatim}
-to the preamble of your tex-file.
+to the preamble of your \TeX-file.
 %
-\item The text of examples and remarks should be typeset in roman
-(not in italics as in definitions, theorems, lemmas, and corollaries).
-This can be achieved as follows:
+\item The text of examples and remarks should be typeset in roman (not in
+  italics as in definitions, theorems, lemmas, and corollaries).  This can be
+  achieved as follows:
 \begin{verbatim}
      \begin{remark}
      {\rm Text of remark.}
      \end{remark}
 \end{verbatim}
 %
-\item  At the end of a proof, there should be a gap between the last
-word and the ``endproof'' symbol (Halmos box). This is achieved as follows:
+\item  At the end of a proof, there should be a gap between the last word and
+  the ``endproof'' symbol (Halmos box). This is achieved as follows:
 %
 \begin{verbatim}     \begin{proof} Text of the proof.  $\qquad$ \end{proof}\end{verbatim}
 %
@@ -116,12 +130,12 @@ You can also generate a command for the ``endproof'' symbol by adding
         {\vrule height1.3ex\hskip0.8ex\vrule}\hrule}}
 \end{verbatim}
 %
-to your tex-file. Typing {\tt \char`\\qed} in a formula then produces
+to your tex-file. Typing \texttt{\char`\\qed} in a formula then produces
 the symbol $\qed\,$.
 %
-\item ETNA uses the {\tt hyperref} package that
-produces hypertext links in the document. The package must be loaded
-in the document's preamble as follows:
+\item ETNA uses the \texttt{hyperref} package that produces hypertext links in
+  the document. The package must be loaded in the document's preamble as
+  follows:
 %
 \begin{verbatim}
      \usepackage
@@ -137,7 +151,7 @@ in the document's preamble as follows:
 
 \item All references in the manuscript should be ``clickable'', which
 means that all numbers of sections, definitions, theorems, equations, etc.,
-should be labeled. {\em Equations that are not referenced should not be numbered.}
+should be labeled. \emph{Equations that are not referenced should not be numbered.}
 %
 \item Tables should have as few lines as possible. For example,
 instead of\\
@@ -154,11 +168,11 @@ you should use\\
 $C1$ & $C2$ & $C3$ \\ \hline
 $a_1$ & $a_2$ & $a_3$ \\
 $b_1$ & $b_2$ & $b_3$
-\end{tabular}~~.\\
+\end{tabular}.\\
 
-\item Table captions should be {\em above} the table (unlike figure captions which
-should be below the figure). The text of all captions (table or figure)
-should end with a period ``.''.
+\item Table captions should be \emph{above} the table (unlike figure captions
+  which should be below the figure). The text of all captions (table or figure)
+  should end with a period ``.''.
 
 \item Appendices should be at the end of the paper, immediately before the
 bibliography.
@@ -166,22 +180,22 @@ bibliography.
 \item Further style-related comments:
 \begin{itemize}
 \item The symbols used for real, complex numbers, etc.,
-are {\tt {\char`\\mathbb\{R\}}}, {\tt {\char`\\mathbb\{C\}}}, etc.
+are \texttt{{\char`\\mathbb\{R\}}}, \texttt{{\char`\\mathbb\{C\}}}, etc.
 %
 \item For matrices, square brackets should be used \\
 (either use
-{\tt \char`\\left[ ... \char`\\right]} or the {\tt \char`\\bmatrix}
+\texttt{\char`\\left[ ... \char`\\right]} or the \texttt{\char`\\bmatrix}
 command).
 %
 \item Sections should be referred to by ``Section~X.Y'' and not ``\S~X.Y''.
 %
 \item The abbreviations ``et al.'', ``i.e.'', and ``e.g.'', in the text
 should always be in roman font.
-In English, there is always a comma after ``i.e." and ``e.g.".
+In English, there is always a comma after ``i.e.'' and ``e.g.''.
 %
-A parenthetical remark in the middle of the sentence
-(e.g., this one) is in parenthesis, while at the end
-of the sentence follows a semicolon; e.g., this one.
+A parenthetical remark in the middle of the sentence (e.g., this one) is in
+parenthesis, while at the end of the sentence follows a semicolon; e.g., this
+one.
 %Insertions in the middle of the sentence should be in parenthesis, but at
 %the end of the sentence they should be separated by a semicolon. Example:
 %``The middle of the sentence (i.e., here), and the end of the sentence;
@@ -192,26 +206,25 @@ of the sentence follows a semicolon; e.g., this one.
 
 
 \section{References}
-To facilitate the editing process, authors are especially urged to
-carefully prepare the references of their manuscripts using the
-correct abbreviations of names of serials. The correct abbreviations
-can be found, for example, using {\em MathSciNet} at {\tt
-http://ams.rice.edu/mathscinet/searchjournals}.
+To facilitate the editing process, authors are especially urged to carefully
+prepare the references of their manuscripts using the correct abbreviations of
+names of serials. The correct abbreviations can be found, for example, using
+\emph{MathSciNet} at \texttt{http://ams.rice.edu/mathscinet/searchjournals}.
 %A PDF file of the
 %correct abbreviations can also be found at
-%{\tt http://www.ams.org/msnhtml/serials.pdf}.
+%\texttt{http://www.ams.org/msnhtml/serials.pdf}.
 %
-{\em Manuscripts may be returned to authors if the manuscripts and the
-references are not properly prepared.} The preferred way for formatting
-the references is to use BIBTeX with the SIAM bibliography style:
+\emph{Manuscripts may be returned to authors if the manuscripts and the
+references are not properly prepared.} The preferred way for formatting the
+references is to use BibTeX with the SIAM bibliography style:
 
 \begin{center}\begin{verbatim}
          \bibliographystyle{siam}
          \bibliography{YourBibFile}
 \end{verbatim}\end{center}
 %
-If you cannot use BIBTeX, here are a few examples of correct
-references for ETNA:
+If you cannot use BibTeX, here are a few examples of correct references for
+ETNA:
 
 \begin{itemize}
 \item Examples for paper citations:
@@ -229,10 +242,11 @@ SIAM J. Matrix Anal. Appl., 9 (1988), pp.~40--58.
 Numer. Linear Algebra Appl., 2 (1995), pp.~87--93.
 \end{verbatim}
 %
-Note: In the second (and further) paper(s) by the same author(s) the
-name(s) should be replaced by the command {\tt \char`\\sameauthor}, which
-is defined by the SIAM LaTeX style. Instead of {\tt \char`\\sameauthor} you may use
-``\mbox{\tt \char`\\leavevmode\char`\\vrule height 2pt depth -1.6pt width 23pt}''.
+Note: In the second (and further) paper(s) by the same author(s) the name(s)
+should be replaced by the command \texttt{\char`\\sameauthor}, which is defined
+by the SIAM LaTeX style. Instead of \texttt{\char`\\sameauthor} you may use
+``\mbox{\texttt{\char`\\leavevmode\char`\\vrule height 2pt depth -1.6pt width
+23pt}}''.
 
 \item Examples for papers that are submitted or to appear:
 
@@ -248,8 +262,8 @@ Math. Ann., submitted, 1858.
 J. Reine Angew. Math., to appear, 2010.
 \end{verbatim}
 
-Note: Giving the journal name is not required, and the publication year
-should only be added if known.
+Note: Giving the journal name is not required, and the publication year should
+only be added if known.
 
 \item Example for book citations:
 
@@ -277,17 +291,17 @@ Amer. Math. Soc., Providence, RI, 1990, pp.~723--762.
 \end{itemize}
 
 \noindent Theses or reports: It is the author's responsibility to provide
-complete details such as editors, publisher, city of publication, page
-numbers, and department and institution.\\
+complete details such as editors, publisher, city of publication, page numbers,
+and department and institution.\\
 
 \noindent Further instructions concerning the references:
 
 \begin{itemize}
 \item In the text references should be cited using the command
-{\tt \char`\\cite$\{\mbox{\tt keylist}\}$},
-where {\tt keylist} contains a list of keys (i.e., the names of your bibitems),
+  \texttt{\char`\\cite$\{\mbox{\texttt{keylist}}\}$},
+where \texttt{keylist} contains a list of keys (i.e., the names of your bibitems),
 separated by commas. Example:
-{\tt \char`\\cite$\{\mbox{\tt ArbGol88,ArbGol95}\}$}.
+\texttt{\char`\\cite$\{\mbox{\texttt{ArbGol88,ArbGol95}}\}$}.
 %
 \item The list of references should be ordered alphabetically, and
 citations should be sorted according to numbers, that is [3,5,12],
@@ -301,16 +315,17 @@ then the authors' names and the publication details should be given. For example
 
 ``Golub and Kahan [SIAM J. Numer. Anal., 2 (1965), pp.~205--224] show that ...''.
 
-\item When a reference is available online, the URL should be added to the citation, e.g.,
+\item When a reference is available online, the URL should be added to the
+  citation, e.g.,
 %
 \begin{verbatim}
 \url{http://etna.math.kent.edu/vol.26.2007/pp453-473.dir}
 \end{verbatim}
 
-\item Some journals have ``paper numbers'' instead of conventional page numbers.
-An example is the Journal of Fluids Engineering. Papers in such journals should
-be cited using the paper number and the number of pages; e.g.,
-J. Fluids Eng., 130 (2008), 051202 (10 pages).
+\item Some journals have ``paper numbers'' instead of conventional page
+  numbers.  An example is the Journal of Fluids Engineering. Papers in such
+  journals should be cited using the paper number and the number of pages;
+  e.g., J. Fluids Eng., 130 (2008), 051202 (10 pages).
 
 
 \end{itemize}
@@ -320,12 +335,13 @@ J. Fluids Eng., 130 (2008), 051202 (10 pages).
 \section{Submission}
 To submit a manuscript, send a ready-to-print PostScript or PDF file containing
 the whole manuscript by email to
-%
-\begin{verbatim}     etna@math.kent.edu\end{verbatim}
-%
+\begin{quote}
+    \href{mailto:etna@math.kent.edu}{\nolinkurl{etna@math.kent.edu}}
+\end{quote}
 or on a CD to ETNA, Department of Mathematical Sciences, Kent State University,
-Kent, Ohio 44242, USA. The e-mail address of the author to contact for revisions
-and corrections must be included on the disk in an ASCII-file called ``address.txt".
+Kent, Ohio 44242, \@USA. The e-mail address of the author to contact for
+revisions and corrections must be included on the disk in an ASCII-file called
+``address.txt''.
 
 
 
@@ -347,7 +363,7 @@ and corrections must be included on the disk in an ASCII-file called ``address.t
 
 % Note: For authors from the same institution there should be one
 %       common footnote and the email addresses in the footnote text
-%       should be written as ({\tt {authorA,authorB}@uofi.edu}).
+%       should be written as (\texttt{{authorA,authorB}@uofi.edu}).
 
 \begin{document}
 
