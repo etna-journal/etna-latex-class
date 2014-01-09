@@ -4,7 +4,7 @@
 
 LATEX:=lualatex
 LATEX_OPTIONS:=-shell-escape
-BIBTEX:=biber
+BIBTEX:=bibtex
 
 # ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
 
