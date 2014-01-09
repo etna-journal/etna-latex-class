@@ -1,5 +1,5 @@
 %
-% Copyright (C) 2013 by Nico Schlömer
+% Copyright (C) 2013-2014 by André Gaul, Nico Schlömer
 %
 % This file may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either
@@ -13,8 +13,6 @@
 %
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{etna}[2013/12/03 v0.1 ETNA LaTeX class]
-
-% TODO: remove leqno in guidelines; seems to be enabled by default.
 
 % TODO: use current siamltex
 % Guidelines advice an old version of siamltex. This may lead to conflicts
@@ -38,14 +36,12 @@
 
 % Set fonts. Don't use
 %   \usepackage{times}
-% as suggested by ETNA. The article [1] suggests to replace times by
+% as originally suggested by ETNA. The article [1] recommends
 \RequirePackage{mathptmx}
 \RequirePackage[scaled=.90]{helvet}
 \RequirePackage{courier}
 
 \RequirePackage[
-%dvips,
-%letterpaper=true,
 colorlinks=true,
 linkcolor=red,
 filecolor=green,
