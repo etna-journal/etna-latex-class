@@ -11,7 +11,7 @@
 % and version 1.2 or later is part of all distributions of
 % LaTeX version 1999/12/01 or later.
 %
-\documentclass[draft,reqno]{etna}
+\documentclass{etna}
 
 \title{Dummy title}
 \author{John Doe\footnotemark[1]
@@ -21,8 +21,10 @@ Jean Dupont\footnotemark[1]
 Max Mustermann\footnotemark[2]
 }
 
-\usepackage{booktabs}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
 
+\usepackage{booktabs}
 \usepackage{lipsum}
 
 \begin{document}
@@ -69,7 +71,7 @@ a^2 + b^2 = c^2.
   \end{equation}
 \end{theorem}
 \begin{proof}
-See~\cite{cauchy1821cours}. $\qquad$
+See~\cite{MR2882785}. $\qquad$
 \end{proof}
 
 Reference to equation~(\ref{eq:1}), theorem~\ref{th:1}.

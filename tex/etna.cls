@@ -23,11 +23,7 @@
 % the classes siamltx and amsthm are incompatible, see
 % <https://tex.stackexchange.com/questions/148198/siamltx-amsthm-latex-error-no-counter-theorem-defined>.
 % TODO come up with another way for defining setting the styles for remarks.
-
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{example}[theorem]{Example}
-%\newtheorem{lemma}[theorem]{Lemma}
-%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{remark}[theorem]{Remark}
 
 
 % [1] An essential guide to LaTeX2e usage;

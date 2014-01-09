@@ -48,14 +48,14 @@ A manuscript for ETNA must be written in English. It may be in color provided
 it is equally readable when displayed in black and white.
 
 Any manuscript submitted to ETNA must be developed in \LaTeX{} using the ETNA
-style files. The manuscript must follow the general guidelines described in
-this document.
-ETNA papers are compiled using \texttt{lualatex}, so before submitting, make
-sure that your document compiles cleanly.
+style files and must follow the general guidelines described in this document.
+ETNA papers are compiled using \texttt{pdflatex}/\texttt{lualatex}, so before
+submitting, make sure that your document compiles cleanly.
 
 \section{Installation}
 
-The ETNA style files are provided at
+Most of the styling is handled by the ETNA \LaTeX{} class. The necessary files
+can be retrieved at
 \begin{quote}
 \url{http://etna.math.kent.edu/LaTeX}.
 \end{quote}
@@ -63,12 +63,17 @@ For installation, the package needs to be downloaded an unpacked in a directory
 where \LaTeX{} can find it.
 
 \paragraph{Quick start}
-The ETNA package contains an example document, \texttt{example.tex} which can
-be used as a template for preparing a manuscript.
+For using the ETNA class, make sure that your \LaTeX{} document starts out with
+\begin{minted}{latex}
+\documentclass{etna}
+\end{minted}
+The ETNA package contains an example document,
+\texttt{example.tex}, which can be used as a template for preparing a
+manuscript.
 
 \section{Usage}
-All manuscripts submitted to ETNA must use the ETNA style, i.e.,
-\verb|\documentclass{etna}|, and adhere to the following ETNA specific rules.
+
+When preparing a manuscript, a few ETNA-specific rules have to be considered.
 
 \begin{itemize}
 \item Figures should be submitted as vector graphics and not as bitmaps
@@ -197,6 +202,7 @@ Further instructions concerning the references:
   throughout the paper.
 
 \item Only references cited in the text should be included in the bibliography.
+  Do not use \verb|\nocite{...}|.
 
 \item Citations in the abstract should be avoided. If this is not possible,
   then the authors' names and the publication details should be given. For
