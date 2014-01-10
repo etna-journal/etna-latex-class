@@ -73,15 +73,24 @@ manuscript.
 
 \section{Usage}
 
-Even if your manuscript compiles without error, there are a few common mistakes
-that even experienced \LaTeX{} authors tend to make. Most of them are picked
-out by the excellent tool
-\begin{quote}
+ETNA would like to encourage authors to provide high-quality \LaTeX{}
+manuscripts. To avoid many common mistakes, authors are requested to use the
+following two tools.
+\begin{itemize}
+\item Check your document with the excellent tool
   \verb|lacheck|\footnote{\url{http://www.ctan.org/tex-archive/support/lacheck}}
-\end{quote}
-which ships with every major \TeX{}-distribution.
-Authors are highly encouraged to run it over their \LaTeX{} sources and
-eliminate the warnings and errors.
+  (included in every major \TeX{}-dis\-tri\-bu\-tion). It helps you avoiding commonly
+  made mistakes and is useful even for experienced \LaTeX{}-authors.
+
+\item The \emph{nag}
+  package\footnote{\url{http://www.ctan.org/tex-archive/macros/latex2e/contrib/nag}}
+  (included in every major \TeX-distribution) tells you where obsolete commands
+  are used in the documents, and gives hints on how to replace them. Just add
+  \begin{minted}{latex}
+  \usepackage[l2tabu,orthodox]{nag}
+  \end{minted}
+  to the header of your \LaTeX{} document.
+\end{itemize}
 
 On top of that, there are a few ETNA-specific rules that have to be considered:
 
