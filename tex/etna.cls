@@ -44,3 +44,79 @@ filecolor=green,
 citecolor=red
 ]
 {hyperref}
+
+% Add a bunch of key-value options for the header.
+\RequirePackage{kvoptions}
+\DeclareStringOption[1]{firstpage}
+\DeclareStringOption[0]{volume}
+\DeclareStringOption[0]{year}
+\DeclareStringOption[0000--0000]{issn}
+\DeclareStringOption[0]{copyrightyear}
+
+\ProcessKeyvalOptions*
+
+% Get easy access to the last page number.
+\RequirePackage{lastpage}
+
+%\def\etna@firstpage{134}
+
+% Set the first page number.
+\addtocounter{page}{\etna@firstpage}
+
+% Now for the page header.
+% ETNA would like to stamp each page with a large "ETNA" header above the
+% actual header. Some twiddling is needed.
+% First, increase the top margin and take it away from the text height.
+\addtolength{\topmargin}{0.7in}
+\addtolength{\textheight}{-0.7in}
+
+% We will use \xwatermark to put the stamps on the page. By default,
+% \xwatermark puts the watermarks dead centered onto the page. To have them
+% properly shifted, calculate some length based on LaTeX's page layout, cf.
+% <http://en.wikibooks.org/wiki/LaTeX/Page_Layout>.
+\newlength\xshift
+\setlength\xshift{-0.5\paperwidth}
+\addtolength\xshift{1in}
+\addtolength\xshift{\hoffset}
+\addtolength\xshift{\oddsidemargin}
+\addtolength\xshift{1.25in}
+
+\newlength\xshiftOther
+\setlength\xshiftOther{0.5\paperwidth}
+\addtolength\xshiftOther{-1in}
+\addtolength\xshiftOther{-\hoffset}
+\addtolength\xshiftOther{-\oddsidemargin}
+\addtolength\xshiftOther{-1.0in}
+
+\newlength\yshift
+\setlength\yshift{0.5\paperheight}
+\addtolength\yshift{-1in}
+
+\usepackage[printwatermark]{xwatermark}
+\newwatermark[
+allpages,
+color=black,
+scale=1,
+xpos=\xshift,
+ypos=\yshift
+]{%
+\begin{minipage}{2.5in}\bfseries\footnotesize\upshape
+Electronic Transactions on Numerical Analysis.\\
+Volume~\etna@volume, pp.~\etna@firstpage--\pageref{LastPage}, \etna@year.\\
+Copyright \textcopyright{}~\etna@copyrightyear, Kent State University.\\
+ISSN~\etna@issn.
+\end{minipage}}
+
+\newwatermark[
+allpages,
+color=black,
+scale=1,
+xpos=\xshiftOther,
+ypos=\yshift,
+]{%
+\setlength{\fboxrule}{1pt}%
+\fbox{\begin{minipage}{2.0in}\bfseries\normalsize\centering
+{\Large ETNA}\\
+Kent State University\\
+{\small\url{http://etna.math.kent.edu}}
+\end{minipage}}}
