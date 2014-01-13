@@ -33,21 +33,22 @@
 % Set fonts. Don't use
 %   \usepackage{times}
 % as originally suggested by ETNA. The article [1] recommends
+\RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
 \RequirePackage[scaled=.90]{helvet}
 \RequirePackage{courier}
 
 \RequirePackage[
 colorlinks=true,
-linkcolor=red,
-filecolor=green,
-citecolor=red
+%linkcolor=red,
+%filecolor=green,
+%citecolor=red
 ]
 {hyperref}
 
 % Add a bunch of key-value options for the header.
 \RequirePackage{kvoptions}
-\DeclareStringOption[1]{firstpage}
+\DeclareStringOption[1]{firstpagenumber}
 \DeclareStringOption[0]{volume}
 \DeclareStringOption[0]{year}
 \DeclareStringOption[0000--0000]{issn}
@@ -58,10 +59,12 @@ citecolor=red
 % Get easy access to the last page number.
 \RequirePackage{lastpage}
 
-%\def\etna@firstpage{134}
 
 % Set the first page number.
-\addtocounter{page}{\etna@firstpage}
+\addtocounter{page}{\etna@firstpagenumber}
+% Decrement the firstpage counter.
+\addtocounter{page}{-1}
+
 
 % Now for the page header.
 % ETNA would like to stamp each page with a large "ETNA" header above the
@@ -94,7 +97,7 @@ citecolor=red
 
 \usepackage[printwatermark]{xwatermark}
 \newwatermark[
-allpages,
+pages=\etna@firstpagenumber,
 color=black,
 scale=1,
 xpos=\xshift,
@@ -102,7 +105,7 @@ ypos=\yshift
 ]{%
 \begin{minipage}{2.5in}\bfseries\footnotesize\upshape
 Electronic Transactions on Numerical Analysis.\\
-Volume~\etna@volume, pp.~\etna@firstpage--\pageref{LastPage}, \etna@year.\\
+Volume~\etna@volume, pp.~\etna@firstpagenumber--\pageref*{LastPage}, \etna@year.\\
 Copyright \textcopyright{}~\etna@copyrightyear, Kent State University.\\
 ISSN~\etna@issn.
 \end{minipage}}
@@ -115,7 +118,7 @@ xpos=\xshiftOther,
 ypos=\yshift,
 ]{%
 \setlength{\fboxrule}{1pt}%
-\fbox{\begin{minipage}{2.0in}\bfseries\normalsize\centering
+\fbox{\begin{minipage}{2.0in}\bfseries\normalsize\upshape\centering
 {\Large ETNA}\\
 Kent State University\\
 {\small\url{http://etna.math.kent.edu}}
