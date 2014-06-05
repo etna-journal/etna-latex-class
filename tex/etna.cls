@@ -36,9 +36,9 @@
 % Set fonts. Don't use
 %   \usepackage{times}
 % as originally suggested by ETNA. The article [1] recommends
-\RequirePackage{mathptmx}
-\RequirePackage[scaled=.90]{helvet}
-\RequirePackage{courier}
+%\RequirePackage{mathptmx}
+\RequirePackage{newtxtext}
+\RequirePackage{newtxmath}
 
 \RequirePackage[
 colorlinks=true,
@@ -77,8 +77,8 @@ colorlinks=true,
 % actual header. Some twiddling is needed.
 % First, increase the top margin and take it away from the text height.
 %\RequirePackage{geometry}
-\addtolength{\topmargin}{0.7in}
-\addtolength{\textheight}{-0.7in}
+\addtolength{\topmargin}{0.6in}
+\addtolength{\textheight}{-0.6in}
 
 % We will use \xwatermark to put the stamps on the page. By default,
 % \xwatermark puts the watermarks dead centered onto the page. To have them
@@ -96,7 +96,7 @@ colorlinks=true,
 \addtolength\xshiftOther{-0.51in} % that magic value :/
 \addtolength\xshiftOther{-\marginparwidth}
 \addtolength\xshiftOther{-\marginparsep}
-\addtolength\xshiftOther{-0.75in} % half the minipage width
+\addtolength\xshiftOther{-0.65in} % half the minipage width
 \addtolength\xshiftOther{-1pt} % frame width
 
 \newlength\yshift
@@ -128,7 +128,7 @@ ypos=\yshift,
 ]{%
 \setlength{\fboxrule}{1pt}%
 \fbox{%
-  \begin{minipage}{1.5in}\bfseries\normalsize\upshape\centering
+  \begin{minipage}{1.3in}\bfseries\normalsize\upshape\centering
     ETNA\\
     {\footnotesize Kent State University}\\
     {\scriptsize\texttt{http://etna.math.kent.edu}}
