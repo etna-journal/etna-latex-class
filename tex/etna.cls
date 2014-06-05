@@ -89,14 +89,15 @@ colorlinks=true,
 \addtolength\xshift{1in}
 \addtolength\xshift{\hoffset}
 \addtolength\xshift{\oddsidemargin}
-\addtolength\xshift{1.25in}
+\addtolength\xshift{1.25in} % half the minipage width
 
 \newlength\xshiftOther
 \setlength\xshiftOther{0.5\paperwidth}
-\addtolength\xshiftOther{-1in}
-\addtolength\xshiftOther{-\hoffset}
-\addtolength\xshiftOther{-\oddsidemargin}
-\addtolength\xshiftOther{-1.0in}
+\addtolength\xshiftOther{-0.51in} % that magic value :/
+\addtolength\xshiftOther{-\marginparwidth}
+\addtolength\xshiftOther{-\marginparsep}
+\addtolength\xshiftOther{-0.75in} % half the minipage width
+\addtolength\xshiftOther{-1pt} % frame width
 
 \newlength\yshift
 \setlength\yshift{0.5\paperheight}
@@ -127,10 +128,10 @@ ypos=\yshift,
 ]{%
 \setlength{\fboxrule}{1pt}%
 \fbox{%
-  \begin{minipage}{1.9in}\bfseries\normalsize\upshape\centering
-    {\Large ETNA}\\
-    Kent State University\\
-    {\small\url{http://etna.math.kent.edu}}
+  \begin{minipage}{1.5in}\bfseries\normalsize\upshape\centering
+    ETNA\\
+    {\footnotesize Kent State University}\\
+    {\scriptsize\texttt{http://etna.math.kent.edu}}
   \end{minipage}%
 }%
 }
