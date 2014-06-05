@@ -35,6 +35,7 @@ clean:
 	       $(TARGET).thm \
 	       $(TARGET).bcf \
 	       $(TARGET).blg \
+	       $(TARGET).xwm \
 	       $(TARGET).run.xml \
 	       missfont.log \
 	       *~

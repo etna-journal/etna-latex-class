@@ -25,7 +25,10 @@
 % TODO come up with another way for defining setting the styles for remarks.
 %\newtheorem{remark}[theorem]{Remark}
 
+\RequirePackage[orthodox,l2tabu]{nag}
 
+\RequirePackage[T1]{fontenc}
+\RequirePackage{microtype}
 % [1] An essential guide to LaTeX2e usage;
 %     Mark Trettin, Jürgen Fenn;
 %     <http://www.ctan.org/tex-archive/info/l2tabu>.
@@ -33,13 +36,16 @@
 % Set fonts. Don't use
 %   \usepackage{times}
 % as originally suggested by ETNA. The article [1] recommends
-\RequirePackage[T1]{fontenc}
 \RequirePackage{mathptmx}
 \RequirePackage[scaled=.90]{helvet}
 \RequirePackage{courier}
 
 \RequirePackage[
 colorlinks=true,
+%pdftitle=gg,
+%pdfauthor=gg,
+%pdfsubject=gg,
+%pdfkeywords=gg,
 %linkcolor=red,
 %filecolor=green,
 %citecolor=red
@@ -70,6 +76,7 @@ colorlinks=true,
 % ETNA would like to stamp each page with a large "ETNA" header above the
 % actual header. Some twiddling is needed.
 % First, increase the top margin and take it away from the text height.
+%\RequirePackage{geometry}
 \addtolength{\topmargin}{0.7in}
 \addtolength{\textheight}{-0.7in}
 
@@ -103,12 +110,13 @@ scale=1,
 xpos=\xshift,
 ypos=\yshift
 ]{%
-\begin{minipage}{2.5in}\bfseries\footnotesize\upshape
-Electronic Transactions on Numerical Analysis.\\
-Volume~\etna@volume, pp.~\etna@firstpagenumber--\pageref*{LastPage}, \etna@year.\\
-Copyright \textcopyright{}~\etna@copyrightyear, Kent State University.\\
-ISSN~\etna@issn.
-\end{minipage}}
+  \begin{minipage}{2.5in}\bfseries\footnotesize\upshape%
+    Electronic Transactions on Numerical Analysis.\\
+    Volume~\etna@volume, pp.~\etna@firstpagenumber--\pageref*{LastPage}, \etna@year.\\
+    Copyright {\mdseries\textcopyright}~\etna@copyrightyear, Kent State University.\\
+    ISSN~\etna@issn.%
+\end{minipage}%
+}
 
 \newwatermark[
 allpages,
@@ -118,8 +126,11 @@ xpos=\xshiftOther,
 ypos=\yshift,
 ]{%
 \setlength{\fboxrule}{1pt}%
-\fbox{\begin{minipage}{2.0in}\bfseries\normalsize\upshape\centering
-{\Large ETNA}\\
-Kent State University\\
-{\small\url{http://etna.math.kent.edu}}
-\end{minipage}}}
+\fbox{%
+  \begin{minipage}{1.9in}\bfseries\normalsize\upshape\centering
+    {\Large ETNA}\\
+    Kent State University\\
+    {\small\url{http://etna.math.kent.edu}}
+  \end{minipage}%
+}%
+}
