@@ -27,6 +27,9 @@
 
 \RequirePackage[orthodox,l2tabu]{nag}
 
+% Add LaTeX fixes by default.
+\RequirePackage{fixltx2e}
+
 \RequirePackage[T1]{fontenc}
 \RequirePackage{microtype}
 % [1] An essential guide to LaTeX2e usage;
@@ -35,8 +38,10 @@
 
 % Set fonts. Don't use
 %   \usepackage{times}
-% as originally suggested by ETNA. The article [1] recommends
+% as originally suggested by ETNA. The article [1] suggests
 %\RequirePackage{mathptmx}
+% However, some perceive the math font as imbalanced. An
+% alternative are the newtx fonts.
 \RequirePackage{newtxtext}
 \RequirePackage{newtxmath}
 
