@@ -53,7 +53,10 @@ colorlinks=true,
 %pdfkeywords=gg,
 %linkcolor=red,
 %filecolor=green,
-%citecolor=red
+%citecolor=red,
+% Make the URL color black to make the ETNA header less
+% distracting.
+urlcolor=black
 ]
 {hyperref}
 
@@ -136,7 +139,7 @@ ypos=\yshift,
   \begin{minipage}{1.3in}\bfseries\normalsize\upshape\centering
     ETNA\\
     {\footnotesize Kent State University}\\
-    {\scriptsize\texttt{http://etna.math.kent.edu}}
+    {\scriptsize\url{http://etna.math.kent.edu}}
   \end{minipage}%
 }%
 }
