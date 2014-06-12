@@ -79,15 +79,6 @@ urlcolor=black
 % Decrement the firstpage counter.
 \addtocounter{page}{-1}
 
-
-% Now for the page header.
-% ETNA would like to stamp each page with a large "ETNA" header above the
-% actual header. Some twiddling is needed.
-% First, increase the top margin and take it away from the text height.
-%\RequirePackage{geometry}
-\addtolength{\topmargin}{0.6in}
-\addtolength{\textheight}{-0.6in}
-
 % We will use \xwatermark to put the stamps on the page. By default,
 % \xwatermark puts the watermarks dead centered onto the page. To have them
 % properly shifted, calculate some length based on LaTeX's page layout, cf.
@@ -109,7 +100,7 @@ urlcolor=black
 
 \newlength\yshift
 \setlength\yshift{0.5\paperheight}
-\addtolength\yshift{-1in}
+\addtolength\yshift{-0.5in}
 
 \usepackage[printwatermark]{xwatermark}
 \newwatermark[
