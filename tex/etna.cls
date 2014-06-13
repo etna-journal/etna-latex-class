@@ -73,7 +73,6 @@ urlcolor=black
 % Get easy access to the last page number.
 \RequirePackage{lastpage}
 
-
 % Set the first page number.
 \addtocounter{page}{\etna@firstpagenumber}
 % Decrement the firstpage counter.
@@ -90,13 +89,14 @@ urlcolor=black
 \addtolength\xshift{\oddsidemargin}
 \addtolength\xshift{1.25in} % half the minipage width
 
+% http://tex.stackexchange.com/questions/184588/moving-minipage-on-page-to-flush-right-with-text
 \newlength\xshiftOther
 \setlength\xshiftOther{0.5\paperwidth}
-\addtolength\xshiftOther{-0.51in} % that magic value :/
 \addtolength\xshiftOther{-\marginparwidth}
 \addtolength\xshiftOther{-\marginparsep}
-\addtolength\xshiftOther{-0.65in} % half the minipage width
+\addtolength\xshiftOther{-\oddsidemargin}
 \addtolength\xshiftOther{-1pt} % frame width
+\addtolength\xshiftOther{-0.65in} % half the minipage width
 
 \newlength\yshift
 \setlength\yshift{0.5\paperheight}
