@@ -39,11 +39,15 @@
 % Set fonts. Don't use
 %   \usepackage{times}
 % as originally suggested by ETNA. The article [1] suggests
-%\RequirePackage{mathptmx}
-% However, some perceive the math font as imbalanced. An
-% alternative are the newtx fonts.
-\RequirePackage{newtxtext}
-\RequirePackage{newtxmath}
+\RequirePackage{mathptmx}
+\RequirePackage[scaled=.92]{helvet}
+\RequirePackage{courier}
+% Since some perceive the math font as imbalanced, an even better alternative
+% would be
+%   \RequirePackage{newtxtext}
+%   \RequirePackage{newtxmath}
+% Those fonts aren't installed on all systems yet (Dec 2014), so don't use them
+% yet.
 
 \RequirePackage[
 colorlinks=true,
