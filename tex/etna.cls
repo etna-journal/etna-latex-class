@@ -131,7 +131,7 @@ ypos=\yshift,
 ]{%
 \setlength{\fboxrule}{1pt}%
 \fbox{%
-  \begin{minipage}{1.3in}\bfseries\normalsize\upshape\centering
+  \begin{minipage}{1.5in}\bfseries\normalsize\upshape\centering
     ETNA\\
     {\footnotesize Kent State University}\\
     {\scriptsize\url{http://etna.math.kent.edu}}
