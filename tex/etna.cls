@@ -25,7 +25,7 @@
 % TODO come up with another way for defining setting the styles for remarks.
 %\newtheorem{remark}[theorem]{Remark}
 
-\RequirePackage[orthodox,l2tabu]{nag}
+%\RequirePackage[orthodox,l2tabu]{nag}
 
 % Add LaTeX fixes by default.
 \RequirePackage{fixltx2e}
@@ -37,17 +37,15 @@
 %     <http://www.ctan.org/tex-archive/info/l2tabu>.
 
 % Set fonts. Don't use
-%   \usepackage{times}
+   \usepackage{times}
+%   \usepackage[scaled=0.1]{helvet}
 % as originally suggested by ETNA. The article [1] suggests
-\RequirePackage{mathptmx}
-\RequirePackage[scaled=.92]{helvet}
-\RequirePackage{courier}
-% Since some perceive the math font as imbalanced, an even better alternative
-% would be
-%   \RequirePackage{newtxtext}
-%   \RequirePackage{newtxmath}
-% Those fonts aren't installed on all systems yet (Dec 2014), so don't use them
-% yet.
+%\RequirePackage{mathptmx}
+% However, some perceive the math font as imbalanced. An
+% alternative are the newtx fonts.
+%\RequirePackage{newtxtext}
+%\RequirePackage{newtxmath}
+
 
 \RequirePackage[
 colorlinks=true,
@@ -55,27 +53,26 @@ colorlinks=true,
 %pdfauthor=gg,
 %pdfsubject=gg,
 %pdfkeywords=gg,
-%linkcolor=red,
-%filecolor=green,
-%citecolor=red,
-% Make the URL color black to make the ETNA header less
-% distracting.
-urlcolor=black
+linkcolor=red,
+filecolor=green,
+citecolor=red,
+hypertexnames=false
 ]
 {hyperref}
 
 % Add a bunch of key-value options for the header.
 \RequirePackage{kvoptions}
 \DeclareStringOption[1]{firstpagenumber}
-\DeclareStringOption[0]{volume}
-\DeclareStringOption[0]{year}
-\DeclareStringOption[0000--0000]{issn}
-\DeclareStringOption[0]{copyrightyear}
+\DeclareStringOption[xx]{lastpagenumber}
+\DeclareStringOption[xx]{volume}
+\DeclareStringOption[2xxx]{year}
+\DeclareStringOption[1068--9613]{issn}
+\DeclareStringOption[\etna@year]{copyrightyear}
 
 \ProcessKeyvalOptions*
 
 % Get easy access to the last page number.
-\RequirePackage{lastpage}
+%\RequirePackage{lastpage}
 
 % Set the first page number.
 \addtocounter{page}{\etna@firstpagenumber}
@@ -100,7 +97,7 @@ urlcolor=black
 \addtolength\xshiftOther{-\marginparsep}
 \addtolength\xshiftOther{-\oddsidemargin}
 \addtolength\xshiftOther{-1pt} % frame width
-\addtolength\xshiftOther{-0.65in} % half the minipage width
+\addtolength\xshiftOther{-0.6in} % half the minipage width
 
 \newlength\yshift
 \setlength\yshift{0.5\paperheight}
@@ -114,10 +111,10 @@ scale=1,
 xpos=\xshift,
 ypos=\yshift
 ]{%
-  \begin{minipage}{2.5in}\bfseries\footnotesize\upshape%
-    Electronic Transactions on Numerical Analysis.\\
-    Volume~\etna@volume, pp.~\etna@firstpagenumber--\pageref*{LastPage}, \etna@year.\\
-    Copyright {\mdseries\textcopyright}~\etna@copyrightyear, Kent State University.\\
+  \begin{minipage}{2.5in}\bfseries\scriptsize\upshape%
+    Electronic Transactions on Numerical Analysis.\\[2pt]
+    Volume~\etna@volume, pp.~\etna@firstpagenumber--\etna@lastpagenumber, \etna@year.\\[2pt]
+    Copyright {\mdseries\textcopyright}~\etna@copyrightyear, Kent State University.\\[2pt]
     ISSN~\etna@issn.%
 \end{minipage}%
 }
@@ -131,10 +128,11 @@ ypos=\yshift,
 ]{%
 \setlength{\fboxrule}{1pt}%
 \fbox{%
-  \begin{minipage}{1.5in}\bfseries\normalsize\upshape\centering
-    ETNA\\
-    {\footnotesize Kent State University}\\
-    {\scriptsize\url{http://etna.math.kent.edu}}
-  \end{minipage}%
+  \begin{minipage}{1.2in}\bfseries\normalsize\upshape\centering
+    ETNA\\[-0.5ex]
+    {\scriptsize Kent State University}\\[-0.5ex]
+    {\scriptsize {http://etna.math.kent.edu}}\\%\\[-2.5ex]
+%    \rule[2ex]{\textwidth}{1pt}
+  \end{minipage}%\vspace{-4ex} %
 }%
 }
