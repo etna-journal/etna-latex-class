@@ -35,3 +35,4 @@ clean:
 	       $(TARGET).run.xml \
 	       missfont.log \
 	       *~
+	@rm -rf _minted-guidelines/

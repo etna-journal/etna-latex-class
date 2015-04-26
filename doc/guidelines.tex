@@ -29,9 +29,15 @@
 colorlinks=true,
 linkcolor=red,
 filecolor=green,
-citecolor=red
+citecolor=red,
+unicode
 ]
 {hyperref}
+
+\hypersetup{
+  pdftitle={Guidelines for ETNA manuscripts},
+  pdfauthor={Nico Schlömer}
+}
 
 \usepackage{minted}
 
@@ -90,6 +96,24 @@ following two tools.
   \usepackage[l2tabu,orthodox]{nag}
   \end{minted}
   to the header of your \LaTeX{} document.
+
+\item Adding meta data to your document makes it easier to process the
+  PDF, e.g., by an internet search engine. For this reason, we ask authors to
+  add the appropriate equivalent of at least
+  \begin{minted}{latex}
+  \hypersetup{
+    pdftitle={Document title},
+    pdfauthor={John Doe, Erwin Schrödinger},
+  }
+  \end{minted}
+  Further options include
+  \begin{minted}{latex}
+    pdfsubject={Document subject},
+    pdfkeywords={a keyword, another keyword, and another one}
+  \end{minted}
+  Note that you can use non-ASCII characters here.
+  Once compiled, most popular PDF readers will display this meta information in
+  the \emph{About} or \emph{Properties} tab.
 \end{itemize}
 
 On top of that, there are a few ETNA-specific rules that have to be considered:

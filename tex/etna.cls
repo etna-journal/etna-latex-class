@@ -56,7 +56,8 @@ colorlinks=true,
 linkcolor=red,
 filecolor=green,
 citecolor=red,
-hypertexnames=false
+hypertexnames=false,
+unicode
 ]
 {hyperref}
 
