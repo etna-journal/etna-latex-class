@@ -101,15 +101,15 @@ following two tools.
   PDF, e.g., by an internet search engine. For this reason, we ask authors to
   add the appropriate equivalent of at least
   \begin{minted}{latex}
-  \hypersetup{
-    pdftitle={Document title},
-    pdfauthor={John Doe, Erwin Schrödinger},
-  }
+    \pdfinfo{
+      /Title (Title of the manuscript)
+      /Author (A. Uthor, J. Doe)
+    }
   \end{minted}
-  Further options include
+  in the document header. Further options include
   \begin{minted}{latex}
-    pdfsubject={Document subject},
-    pdfkeywords={a keyword, another keyword, and another one}
+    /Subject (Example)
+    /Keywords (Keyword, another keyword)
   \end{minted}
   Note that you can use non-ASCII characters here.
   Once compiled, most popular PDF readers will display this meta information in
