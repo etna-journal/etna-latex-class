@@ -34,7 +34,7 @@ unicode
 ]
 {hyperref}
 
-\hypersetup{
+\hypersetup{%
   pdftitle={Guidelines for ETNA manuscripts},
   pdfauthor={Nico Schlömer}
 }
@@ -101,7 +101,7 @@ following two tools.
   PDF, e.g., by an internet search engine. For this reason, we ask authors to
   add the appropriate equivalent of at least
   \begin{minted}{latex}
-  \hypersetup{
+  \hypersetup{%
     pdftitle={Document title},
     pdfauthor={John Doe, Erwin Schr\"odinger},
   }
@@ -166,7 +166,8 @@ If the proof ends with a displayed equation you should use the following:
 \]
 \end{minted}
 
-\item Equations that are not referenced should not be numbered. The package
+\item Equations that are not referenced should not be numbered. Packages
+  like mathtools\footnote{\url{https://www.ctan.org/pkg/mathtools?lang=en}} or
   refcheck\footnote{\url{http://ctan.org/pkg/refcheck}} can aid with that task.
 
 \item Tables should be typeset with the booktabs
@@ -191,8 +192,8 @@ the form
 \end{center}
 should be used.
 \item Table captions should be \emph{above} the table (unlike figure captions
-  which should be below the figure). The text of all captions (table or figure)
-  should end with a period~`.'.
+  which should be below the figure).
+\item The text of all captions (table or figure) should end with a period~`.'.
 
 \item Appendices should be at the end of the paper, immediately before the
   bibliography.
